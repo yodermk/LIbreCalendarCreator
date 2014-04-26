@@ -13,8 +13,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    newcalendar.cpp \
+    monthclass.cpp \
+    editmonth.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    newcalendar.h \
+    monthclass.h \
+    editmonth.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    newcalendar.ui \
+    editmonth.ui

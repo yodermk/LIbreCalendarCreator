@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QListWidget>
+#include <QDate>
+#include <QList>
+#include "monthclass.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +21,14 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    bool modified;
+    QDate startMonth, endMonth;
+    QList<MonthClass> months;
+
+public slots:
+    void newCalendar();
+    void editMonth(QListWidgetItem* item);
+    void generateCalendar();
 };
 
 #endif // MAINWINDOW_H
