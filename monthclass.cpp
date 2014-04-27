@@ -20,8 +20,12 @@ void MonthClass::drawCalendarPage(QPaintDevice *pd)
     int h = pd->height();
     int w = pd->width();
     int calheight = h*8/10;  // leave some room
+    int adj = calheight % 6;
+    calheight -= adj; // This should eliminate the lines "jutting" past the end
     int weekheight = calheight/6;  // pixel height of each week
     int calwidth = w*8/10;   // leave some room
+    adj = calwidth % 7;
+    calwidth -= adj;
     int daywidth = calwidth/7;     // pixel width of each day
     int xoffset = w/10;  // go this far to the right before starting
     int yoffset = h/10;  // go this far down before starting

@@ -54,11 +54,11 @@ void MainWindow::generateCalendar()
 {
     int currMonth;
     QPdfWriter writer("/home/micah/Calendar.pdf");
-    writer.setCreator("Micah Yoder");
+    writer.setCreator("Libre Calendar Creator");
     writer.setPageSize(QPagedPaintDevice::A4);
     for (currMonth = 0; currMonth < ui->monthList->count(); currMonth++) {
         writer.newPage();
         months[currMonth].drawCalendarPage(&writer);
-        qDebug("hello");
+        qDebug("hello " + months[currMonth].text().toLatin1());
     }
 }
