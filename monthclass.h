@@ -11,7 +11,7 @@ private:
 public:
     MonthClass(QDate m);
     void drawPicturePage(QPaintDevice * pd);
-    void drawCalendarPage(QPaintDevice * pd);
+    void drawCalendarPage(QPainter *painter, int w, int h);
     QString text();
 };
 

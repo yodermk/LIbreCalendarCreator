@@ -3,6 +3,7 @@
 #include "newcalendar.h"
 #include "editmonth.h"
 #include <QPdfWriter>
+#include <QPainter>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -54,11 +55,18 @@ void MainWindow::generateCalendar()
 {
     int currMonth;
     QPdfWriter writer("/home/micah/Calendar.pdf");
+    writer.setPageOrientation(QPageLayout::Landscape);
+    QPainter painter(&writer);
+    painter.setPen(QPen(Qt::black, 0.1, Qt::SolidLine));
+    painter.setBrush(QBrush(Qt::black));
+    //painter.setWindow(0, 0, 70, 70);
+
     writer.setCreator("Libre Calendar Creator");
     writer.setPageSize(QPagedPaintDevice::A4);
+    writer.setTitle("Calendar " + months[0].text() + " - " + months[months.size()-1].text());
     for (currMonth = 0; currMonth < ui->monthList->count(); currMonth++) {
-        writer.newPage();
-        months[currMonth].drawCalendarPage(&writer);
+        if (!writer.newPage()) qDebug("newPage fail");
+        months[currMonth].drawCalendarPage(&painter, writer.width(), writer.height());
         qDebug("hello " + months[currMonth].text().toLatin1());
     }
 }
