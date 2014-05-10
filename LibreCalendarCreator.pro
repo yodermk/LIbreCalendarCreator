@@ -26,3 +26,5 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     newcalendar.ui \
     editmonth.ui
+
+QMAKE_CXXFLAGS += -std=c++11

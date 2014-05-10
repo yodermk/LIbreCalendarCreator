@@ -55,11 +55,10 @@ void MainWindow::generateCalendar()
 {
     int currMonth;
     QPdfWriter writer("/home/micah/Calendar.pdf");
-    writer.setPageOrientation(QPageLayout::Landscape);
+    // 5.3 writer.setPageOrientation(QPageLayout::Landscape);
     QPainter painter(&writer);
     painter.setPen(QPen(Qt::black, 0.1, Qt::SolidLine));
     painter.setBrush(QBrush(Qt::black));
-    //painter.setWindow(0, 0, 70, 70);
 
     writer.setCreator("Libre Calendar Creator");
     writer.setPageSize(QPagedPaintDevice::A4);
