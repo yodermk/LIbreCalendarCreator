@@ -18,6 +18,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QString fileName;
 
 private:
     Ui::MainWindow *ui;
@@ -29,6 +30,8 @@ public slots:
     void newCalendar();
     void editMonth(QListWidgetItem* item);
     void generateCalendar();
+    void load();
+    void save();
 };
 
 #endif // MAINWINDOW_H

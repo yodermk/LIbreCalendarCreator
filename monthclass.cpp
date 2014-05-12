@@ -9,6 +9,11 @@ MonthClass::MonthClass(QDate m) : firstOfMonth(m.year(), m.month(), 1)
 
 }
 
+MonthClass::MonthClass(QDate m, QDataStream &in, int fileVersion) : firstOfMonth(m)
+{
+
+}
+
 void MonthClass::drawPicturePage(QPaintDevice *pd)
 {
     QPainter painter(pd);
@@ -85,4 +90,9 @@ int MonthClass::weekOfMonth(int day)
     int w=1;
     for (int c=start2ndWk; c<=day; c+=7,w++) {}
     return w;
+}
+
+int MonthClass::save(QDataStream &out)
+{
+
 }
