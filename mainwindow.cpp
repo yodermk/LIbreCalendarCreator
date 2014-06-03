@@ -61,7 +61,7 @@ void MainWindow::generateCalendar()
 {
     int currMonth;
     QPdfWriter writer("/home/micah/Calendar.pdf");
-    // 5.3 writer.setPageOrientation(QPageLayout::Landscape);
+    writer.setPageOrientation(QPageLayout::Landscape);
     QPainter painter(&writer);
     painter.setPen(QPen(Qt::black, 0.1, Qt::SolidLine));
     painter.setBrush(QBrush(Qt::black));
