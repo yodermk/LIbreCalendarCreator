@@ -49,9 +49,9 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="btnChangePhoto">
          <property name="text">
-          <string>PushButton</string>
+          <string>&amp;Change Photo</string>
          </property>
         </widget>
        </item>
