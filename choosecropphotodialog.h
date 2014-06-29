@@ -2,6 +2,7 @@
 #define CHOOSECROPPHOTODIALOG_H
 
 #include <QDialog>
+#include <QFileSystemModel>
 
 namespace Ui {
 class ChooseCropPhotoDialog;
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::ChooseCropPhotoDialog *ui;
+    QFileSystemModel *photoSelectionModel;
 };
 
 #endif // CHOOSECROPPHOTODIALOG_H

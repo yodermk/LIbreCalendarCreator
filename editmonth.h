@@ -21,6 +21,9 @@ private:
     Ui::EditMonth *ui;
     MonthClass monthData;
 
+private slots:
+    void chooseAndCropPhoto();
+
 protected:
     virtual void resizeEvent(QResizeEvent *) { redraw(); }
 };

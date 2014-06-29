@@ -6,6 +6,9 @@ ChooseCropPhotoDialog::ChooseCropPhotoDialog(QWidget *parent) :
     ui(new Ui::ChooseCropPhotoDialog)
 {
     ui->setupUi(this);
+    photoSelectionModel = new QFileSystemModel;
+    ui->browserTreeView->setModel(photoSelectionModel);
+    ui->browserTreeView->setRootIndex(photoSelectionModel->index(QDir::currentPath()));
 }
 
 ChooseCropPhotoDialog::~ChooseCropPhotoDialog()

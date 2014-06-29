@@ -2,6 +2,7 @@
 #include <QPainter>
 #include "editmonth.h"
 #include "ui_editmonth.h"
+#include "choosecropphotodialog.h"
 
 EditMonth::EditMonth(MonthClass& md, QWidget *parent) :
     QDialog(parent),
@@ -9,6 +10,7 @@ EditMonth::EditMonth(MonthClass& md, QWidget *parent) :
     monthData(md)
 {
     ui->setupUi(this);
+    connect(ui->btnChangePhoto, SIGNAL(clicked()), this, SLOT(chooseAndCropPhoto()));
     redraw();
 }
 
@@ -27,4 +29,14 @@ void EditMonth::redraw()
 EditMonth::~EditMonth()
 {
     delete ui;
+}
+
+void EditMonth::chooseAndCropPhoto()
+{
+    ChooseCropPhotoDialog diag(this);
+    int result = diag.exec();
+    if (result == QDialog::Rejected)
+        return;
+
+    // Now set the
 }

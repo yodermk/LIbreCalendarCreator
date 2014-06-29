@@ -30,7 +30,7 @@ void PhotoCropper::paint(QPainter *painter)
 
 QImage PhotoCropper::cropped()
 {
-
+    // return cropInOrig();
 }
 
 void PhotoCropper::newPhoto(QString filename)
