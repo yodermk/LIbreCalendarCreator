@@ -18,9 +18,15 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QTreeView" name="browserTreeView">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="maximumSize">
         <size>
-         <width>400</width>
+         <width>800</width>
          <height>16777215</height>
         </size>
        </property>
@@ -39,7 +45,7 @@
     </layout>
    </item>
    <item>
-    <widget class="PhotoCropper" name="widget" native="true">
+    <widget class="PhotoCropper" name="cropWidget" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>1</horstretch>

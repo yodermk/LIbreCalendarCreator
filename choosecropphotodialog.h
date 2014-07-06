@@ -19,6 +19,9 @@ public:
 private:
     Ui::ChooseCropPhotoDialog *ui;
     QFileSystemModel *photoSelectionModel;
+
+private slots:
+    void photoSelectionChanged(const QModelIndex &index);
 };
 
 #endif // CHOOSECROPPHOTODIALOG_H
