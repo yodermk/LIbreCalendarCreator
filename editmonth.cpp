@@ -38,5 +38,5 @@ void EditMonth::chooseAndCropPhoto()
     if (result == QDialog::Rejected)
         return;
 
-    // Now set the
+    // Now set the selected cropped image
 }

@@ -5,16 +5,17 @@ PhotoCropper::PhotoCropper(QWidget *parent) :
 {
 }
 
-void PhotoCropper::paint(QPainter *painter)
+void PhotoCropper::paintEvent(QPaintEvent *e)
 {
+    QPainter painter(this);
     QRect myRect(0,0,this->width(), this->height());
-    painter->drawImage(myRect, img); // first just draw the original image
+    painter.drawImage(myRect, img); // first just draw the original image
     if (mode>0) {
         // unless mode 0 (no selection), probably want to:
         // 1. Dim the entire image
-        painter->fillRect(myRect, dimColor);
+        painter.fillRect(myRect, dimColor);
         // 2. Draw selected area normal color
-        painter->drawImage(currentCrop, img, cropInOrig());
+        painter.drawImage(currentCrop, img, cropInOrig());
         // 3. Draw handle type things around the edges0
         // (for now, a little white square at each corner)
         QPoint corners[] = {QPoint(currentCrop.left(), currentCrop.top()),
@@ -24,7 +25,7 @@ void PhotoCropper::paint(QPainter *painter)
         QPoint adj(5, 5); // corner handles start 5 pixels up and left of corner point
         QPoint cornerSize(10, 10); // 10x10 pixels total
         for(int i=0; i<4; i++)
-            painter->fillRect(QRect(corners[i]-adj, cornerSize), Qt::white);
+            painter.fillRect(QRect(corners[i]-adj, cornerSize), Qt::white);
     }
 }
 
@@ -38,7 +39,7 @@ void PhotoCropper::newPhoto(QString filename)
     img = QImage(filename);
     imageFileName = filename;
     currentCrop = QRect();
-    repaint();
+    update();
     scalex = img.width() / this->width();
     scaley = img.height() / this->height();
 }

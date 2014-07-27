@@ -12,7 +12,6 @@ class PhotoCropper : public QWidget
     Q_OBJECT
 public:
     explicit PhotoCropper(QWidget *parent = 0);
-    void paint(QPainter *painter);
     QImage cropped();
 
 signals:
@@ -39,6 +38,7 @@ protected:
     void mousePressEvent(QMouseEvent *e);
     void mouseMoveEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
+    void paintEvent(QPaintEvent *e);
 };
 
 #endif // PHOTOCROPPER_H

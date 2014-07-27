@@ -22,6 +22,7 @@ private:
 
 private slots:
     void photoSelectionChanged(const QModelIndex &index);
+    void accept();
 };
 
 #endif // CHOOSECROPPHOTODIALOG_H

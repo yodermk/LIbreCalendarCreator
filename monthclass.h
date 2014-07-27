@@ -3,11 +3,16 @@
 #include <QDate>
 #include <QPaintDevice>
 #include <QDataStream>
+#include <QImage>
+#include <QRect>
 
 class MonthClass
 {
 private:
     QDate firstOfMonth;
+    QImage photoImg;
+    QString photoPath;
+    QRect photoCrop;
 
 public:
     MonthClass(QDate m);
